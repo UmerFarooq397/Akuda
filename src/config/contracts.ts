@@ -80,7 +80,7 @@ const CONTRACTS = {
     GlpManager: AddressZero,
     GMX: AddressZero,
     GLP: AddressZero,
-    VaultReader: AddressZero,
+    VaultReader: "0x0869D9EfD1772E0605505A8CFF734b1813717D8F",
     ReferralStorage: AddressZero,
     DataStore: "0xbA2314b0f71ebC705aeEBeA672cc3bcEc510D03b",
     EventEmitter: "0x2fbE45fCb58B7106CF0a3Be9225D5Ed5A1004cc4",

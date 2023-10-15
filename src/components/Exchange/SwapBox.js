@@ -347,6 +347,7 @@ export default function SwapBox(props) {
   };
 
   const fromBalance = fromTokenInfo ? fromTokenInfo.balance : bigNumberify(0);
+  console.log("From Balance:::: ", fromTokenInfo);
   const toBalance = toTokenInfo ? toTokenInfo.balance : bigNumberify(0);
 
   const fromAmount = parseValue(fromValue, fromToken && fromToken.decimals);
