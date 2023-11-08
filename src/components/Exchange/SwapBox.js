@@ -311,7 +311,7 @@ export default function SwapBox(props) {
   // console.log("infoTokens:::  ", infoTokens);
   console.log("From Token:::  ", fromTokenInfo);
   const toTokenInfo = getTokenInfo(infoTokens, toTokenAddress);
-  // console.log("To Token:::  ", toTokenAddress);
+  console.log("To Token:::  ", toTokenInfo);
   const renderAvailableLongLiquidity = () => {
     if (!isLong) {
       return null;
@@ -497,6 +497,7 @@ export default function SwapBox(props) {
           setToValue("");
           return;
         }
+        console.log("ToToken:: ", toToken);
         if (toToken) {
           const { amount: nextToAmount } = getNextToAmount(
             chainId,

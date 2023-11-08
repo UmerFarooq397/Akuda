@@ -32,7 +32,13 @@ export function useInfoTokens(
 
   const whitelistedTokens = getWhitelistedV1Tokens(chainId);
   const whitelistedTokenAddresses = whitelistedTokens.map((token) => token.address);
-
+  console.log("Continue from here");
+  console.log("vaultReaderAddress:: ", vaultReaderAddress);
+  console.log("Request::: ",vaultAddress,
+    positionRouterAddress,
+    nativeTokenAddress,
+    expandDecimals(1, 18),
+    whitelistedTokenAddresses);
   const { data: vaultTokenInfo } = useSWR<BigNumber[], any>(
     [`useInfoTokens:${active}`, chainId, vaultReaderAddress, "getVaultTokenInfoV4"],
     {
@@ -100,6 +106,7 @@ function getInfoTokens(
 
     infoTokens[token.address] = token;
   }
+   debugger;
 
   for (let i = 0; i < whitelistedTokens.length; i++) {
     const token = JSON.parse(JSON.stringify(whitelistedTokens[i])) as TokenInfo;
@@ -125,7 +132,7 @@ function getInfoTokens(
       token.guaranteedUsd = vaultTokenInfo[i * vaultPropsLength + 12];
       token.maxPrimaryPrice = vaultTokenInfo[i * vaultPropsLength + 13];
       token.minPrimaryPrice = vaultTokenInfo[i * vaultPropsLength + 14];
-
+      debugger
       // save minPrice and maxPrice as setTokenUsingIndexPrices may override it
       token.contractMinPrice = token.minPrice;
       token.contractMaxPrice = token.maxPrice;
